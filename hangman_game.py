@@ -25,7 +25,7 @@ else:
     user_choice_print='fruit'
     secret_word= random.choice(fruits.split(' '))
 length_secret_word= len(secret_word)    # get the length of secret word 
-tot_chances= length_secret_word +2      # give only 2 additional chances
+tot_chances= length_secret_word +3      # give only 2 additional chances
 
 # get user's inputs and check
 print(f'You have to guess a {user_choice_print}.')
@@ -35,14 +35,28 @@ user_word= ['_']*length_secret_word
 print(user_word)
 
 while True:
+
     guess_letter= input('Enter Your guess: ').strip()
     #print(guess_letter)
     if guess_letter in secret_word:
         #print(guess_letter)
         for i in range(length_secret_word):
-            #print(1)
+            #print(i)
             if secret_word[i] == guess_letter:
                 #user_word = list(user_word)
                 user_word[i]= guess_letter
         #user_word= str(user_word)        
         print(user_word)
+        new_word= ''.join(user_word)
+        #print(type(new_word))
+    else:
+        tot_chances-= 1
+        print(f'You have only {tot_chances} additional chances')
+    if new_word== secret_word:
+        print(f'You have guess the word.\nthe word is {secret_word}.')
+        break
+    if tot_chances!= 0:
+        continue
+    else:
+        print('You cannot guess the word.')
+        break
