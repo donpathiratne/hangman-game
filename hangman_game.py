@@ -35,7 +35,6 @@ user_word= ['_']*length_secret_word
 print(user_word)
 
 while True:
-
     guess_letter= input('Enter Your guess: ').strip()
     #print(guess_letter)
     if guess_letter in secret_word:
@@ -43,9 +42,8 @@ while True:
         for i in range(length_secret_word):
             #print(i)
             if secret_word[i] == guess_letter:
-                #user_word = list(user_word)
                 user_word[i]= guess_letter
-        #user_word= str(user_word)        
+        #user_word to string       
         print(user_word)
         new_word= ''.join(user_word)
         #print(type(new_word))
@@ -53,10 +51,11 @@ while True:
         tot_chances-= 1
         print(f'You have only {tot_chances} additional chances')
     if new_word== secret_word:
-        print(f'You have guess the word.\nthe word is {secret_word}.')
+        print(f'You have guess the word.\nThe word is {secret_word}.')
         break
     if tot_chances!= 0:
         continue
     else:
         print('You cannot guess the word.')
         break
+print('End.')
