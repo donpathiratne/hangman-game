@@ -8,5 +8,5 @@ This is my third project.
 - if letters correct, the programe shows the it's position. Otherwise, the Program shows how many guesses user has.
 - if user guess the word, user can win the game.
 
-#Language
+# Language
 - Python
